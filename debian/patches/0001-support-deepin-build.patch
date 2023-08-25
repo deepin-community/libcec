@@ -1,0 +1,25 @@
+From 87233c9531590879dba01a18dc4bb6264fbf3a5d Mon Sep 17 00:00:00 2001
+From: xzl <xiangzelong@deepin.org>
+Date: Fri, 25 Aug 2023 15:37:08 +0800
+Subject: [PATCH] 0001-support-deepin-build
+
+---
+ src/libcec/cmake/CheckPlatformSupport.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/libcec/cmake/CheckPlatformSupport.cmake b/src/libcec/cmake/CheckPlatformSupport.cmake
+index a7f6559..b1cf36c 100644
+--- a/src/libcec/cmake/CheckPlatformSupport.cmake
++++ b/src/libcec/cmake/CheckPlatformSupport.cmake
+@@ -268,7 +268,7 @@ else()
+     else()
+       if(EXISTS "/etc/os-release")
+         file(READ "/etc/os-release" OS_RELEASE)
+-        string(REGEX MATCH "ID(_LIKE)?=debian" IS_DEBIAN ${OS_RELEASE})
++        string(REGEX MATCH "ID(_LIKE)?=(debian|deepin|Deepin)" IS_DEBIAN ${OS_RELEASE})
+         if (IS_DEBIAN)
+           SET(PYTHON_PKG_DIR "dist-packages")
+         endif()
+-- 
+2.33.1
+
